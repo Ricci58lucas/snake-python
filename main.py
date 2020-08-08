@@ -19,7 +19,7 @@ GAME_SPEED = 1000 // MOVES_PER_SECOND
 MOVE_INCREMENT = 20
 
 # create our own canvas class (inheriting from tk.Canvas class)
-class Snake(tk.Canvas):
+class SnakeGame(tk.Canvas):
     def __init__(self):
         super().__init__(width=WIN_WIDTH, height=WIN_HEIGHT, background=BG_COLOR, highlightthickness=0)
 
@@ -123,7 +123,7 @@ class Snake(tk.Canvas):
         elif key_pressed == "space" and self.game_ended:
             # refresh game
             self.destroy()
-            screen = Snake()
+            screen = SnakeGame()
             screen.pack()
             root.mainloop()
       
@@ -174,7 +174,7 @@ root.title("Snake Game")
 root.resizable(False, False)
 
 # call our canvas class
-screen = Snake()
+screen = SnakeGame()
 screen.pack()
 
 # start the loop
